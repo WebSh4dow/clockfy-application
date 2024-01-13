@@ -1,0 +1,11 @@
+# Arquivos de compilação
+target/
+
+# Configurações específicas do IDE
+.classpath
+.project
+.settings/
+
+# Arquivos temporários
+*.log
+*.swp
