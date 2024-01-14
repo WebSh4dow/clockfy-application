@@ -1,11 +1,9 @@
-package com.airhacks.ping.boundary.model;
+package pontoEletronico.model;
 
-import javax.persistence.Entity;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-public class HorarioTrabalho {
+public class Registro {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,5 +38,6 @@ public class HorarioTrabalho {
 	public void setFim(Date fim) {
 		this.fim = fim;
 	}
-
+	
+	
 }

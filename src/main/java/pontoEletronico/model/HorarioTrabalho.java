@@ -1,10 +1,16 @@
-package com.airhacks.ping.boundary.model;
+package pontoEletronico.model;
+
+import javax.persistence.Entity;
+
+import com.google.protobuf.TextFormat.ParseException;
 
 import javax.persistence.*;
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
-public class MarcacaoFeita {
+public class HorarioTrabalho {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +45,13 @@ public class MarcacaoFeita {
 	public void setFim(Date fim) {
 		this.fim = fim;
 	}
-	
-	
+
+	public HorarioTrabalho(Date inicio, Date fim) {
+		this.inicio = inicio;
+		this.fim = fim;
+	}
+
+	public HorarioTrabalho() {
+	}
 
 }

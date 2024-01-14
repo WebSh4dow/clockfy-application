@@ -1,9 +1,10 @@
-package com.airhacks.ping.boundary.model;
+package pontoEletronico.model;
 
 import javax.persistence.*;
 import java.util.Date;
 
-public class Registro {
+@Entity
+public class MarcacaoFeita {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,5 +40,15 @@ public class Registro {
 		this.fim = fim;
 	}
 	
+	public MarcacaoFeita(Date entrada, Date saida) {
+        this.inicio = entrada;
+        this.fim = saida;
+    }
 	
+	public MarcacaoFeita() {
+        
+    }
+	
+	
+
 }
