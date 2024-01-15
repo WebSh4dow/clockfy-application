@@ -1,5 +1,6 @@
 package pontoEletronico.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -35,24 +36,19 @@ public class MarcacaoFeitaRepository {
 	}
 	
 	public List<MarcacaoFeita> listarTodos() {
-		Transaction transaction = null;
-		List<MarcacaoFeita> todos = null;
-		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-			// start a transaction
-			transaction = session.beginTransaction();
-			// get an user object
-
-			todos = session.createQuery("from MarcacaoFeita").getResultList();
-
-			// commit transaction
-			transaction.commit();
-		} catch (Exception e) {
-			if (transaction != null) {
-				transaction.rollback();
-			}
-			e.printStackTrace();
-		}
-		return todos;
+	    Transaction transaction = null;
+	    List<MarcacaoFeita> todos = new ArrayList<>();
+	    try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+	        transaction = session.beginTransaction();
+	        todos = session.createQuery("from MarcacaoFeita").getResultList();
+	        transaction.commit();
+	    } catch (Exception e) {
+	        if (transaction != null) {
+	            transaction.rollback();
+	        }
+	        e.printStackTrace();
+	    }
+	    return todos;
 	}
 
 }

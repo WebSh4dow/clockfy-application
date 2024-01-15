@@ -23,7 +23,7 @@ public class HibernateUtil {
 
 	                Properties settings = new Properties();
 	                settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-	                settings.put(Environment.URL, "jdbc:mysql://localhost:3306/teamhack");
+	                settings.put(Environment.URL, "jdbc:mysql://localhost:3306/pdv");
 	                settings.put(Environment.USER, "root");
 	                settings.put(Environment.PASS, "root");
 	                settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL57Dialect");
